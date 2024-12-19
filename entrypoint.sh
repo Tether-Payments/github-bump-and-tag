@@ -9,8 +9,10 @@ setOutput() {
 # https://nvd.nist.gov/vuln/detail/cve-2022-24765
 git config --global --add safe.directory /github/workspace
 
+echo "Fetching Tags"
 git fetch --tags --recurse-submodules=no
 
+echo "Finding current version"
 versionFmt="^v?[0-9]+\.[0-9]+\.[0-9]+$"
 version="$(git for-each-ref --sort=-v:refname --format '%(refname:lstrip=2)' | grep -E "$versionFmt" | head -n 1)"
 echo "Found Version: ${version}"
