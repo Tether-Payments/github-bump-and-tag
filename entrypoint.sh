@@ -6,6 +6,9 @@ setOutput() {
   echo "${1}=${2}" >> "${GITHUB_OUTPUT}"
 }
 
+# https://nvd.nist.gov/vuln/detail/cve-2022-24765
+git config --global --add safe.directory /github/workspace
+
 git fetch --tags --recurse-submodules=no
 
 versionFmt="^v?[0-9]+\.[0-9]+\.[0-9]+$"
