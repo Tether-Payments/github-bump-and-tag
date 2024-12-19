@@ -7,8 +7,13 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
     bump:
+      # Only run if the PR was closed & merged
+      if: github.event.pull_request.merged == true
       runs-on: ubuntu-latest
 
       steps:
@@ -18,4 +23,4 @@ jobs:
             ref: ${{ github.event.pull_request.merge_commit_sha }}
 
         - name: Bump And Tag
-          uses: Tether-Payments/github-bump-and-tag
+          uses: Tether-Payments/github-bump-and-tag@v0.0.5
