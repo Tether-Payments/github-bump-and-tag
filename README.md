@@ -8,5 +8,15 @@ jobs:
   deploy:
     steps:
         - name: Bump And Tag
-          uses: Tether-Payments/github-bump-and-tag@v0.0.5
+          uses: Tether-Payments/github-bump-and-tag@v0.1.0
+```
+
+## Outputs
+* currentVersion - the current version
+* newVersion - the newly calculated version
+
+### Usage
+```yaml
+${{ steps.tag_version.outputs.currentVersion }}
+${{ steps.tag_version.outputs.newVersion }}
 ```
