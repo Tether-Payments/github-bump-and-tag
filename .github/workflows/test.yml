@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  pull-requests: write
+  checks: write
+  contents: read
+
 jobs:
     bump:
       runs-on: ubuntu-latest
