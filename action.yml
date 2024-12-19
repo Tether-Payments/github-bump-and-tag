@@ -1,0 +1,14 @@
+name: 'Github Bump and Tag'
+description: 'Github action to bump the patch version and tag'
+author: 'Tether Payments Group'
+runs:
+  using: 'docker'
+  image: Dockerfile
+outputs:
+  currentVersion:
+    description: 'Current highest version tag'
+  newVersion:
+    description: 'The newly calculated version'
+branding:
+  icon: 'git-merge'
+  color: 'purple'
