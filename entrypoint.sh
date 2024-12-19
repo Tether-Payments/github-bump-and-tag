@@ -1,6 +1,7 @@
 #!/bin/bash
 
-set -x
+# Uncomment for debugging
+#set -x
 
 setOutput() {
   echo "${1}=${2}" >> "${GITHUB_OUTPUT}"
