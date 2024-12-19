@@ -13,7 +13,7 @@ echo "Fetching Tags"
 git fetch --tags --recurse-submodules=no
 
 # Find the current version
-echo "Finding current version"
+echo "Finding current version t"
 versionFmt="^v?[0-9]+\.[0-9]+\.[0-9]+$"
 echo "Running version finder"
 version="$(git for-each-ref --sort=-v:refname --format '%(refname:lstrip=2)' | grep -E "$versionFmt" | head -n 1)"
