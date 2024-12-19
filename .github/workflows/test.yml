@@ -1,0 +1,19 @@
+name: Bump and Tag Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    bump:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ github.event.pull_request.merge_commit_sha }}
+
+        - name: Bump And Tag
+          uses: Tether-Payments/github-bump-and-tag@v0.0.4
