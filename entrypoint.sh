@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -x
 
 setOutput() {
   echo "${1}=${2}" >> "${GITHUB_OUTPUT}"
