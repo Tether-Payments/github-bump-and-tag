@@ -26,8 +26,8 @@ echo "New Version: ${newVersion}"
 setOutput "newVersion" "$newVersion"
 
 # Set and push the new version tag
-echo "Tagging"
+echo "Tagging Version: ${newVersion}"
 git tag -f "$newVersion"
-echo "Pushing tag"
+echo "Pushing Tag: ${newVersion}"
 git push -f origin "$newVersion"
-
+echo "Complete"
