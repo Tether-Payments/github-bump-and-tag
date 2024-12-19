@@ -13,10 +13,11 @@ echo "Fetching Tags"
 git fetch --tags --recurse-submodules=no
 
 # Find the current version
-echo "Finding current version t"
+echo "Finding current version"
 versionFmt="^v?[0-9]+\.[0-9]+\.[0-9]+$"
 echo "Running version finder"
 version="$(git for-each-ref --sort=-v:refname --format '%(refname:lstrip=2)' | grep -E "$versionFmt" | head -n 1)"
+echo "Found it"
 echo "Found Version: ${version}"
 
 # Set default tag if none is found
